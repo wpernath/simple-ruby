@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'pp'
 
 set :bind, '0.0.0.0'
 set :port, 8080
@@ -14,4 +15,8 @@ end
 
 get '/:name' do
     "#{greeting}, #{params[:name]}!"
+end
+
+get '/env' do
+    pp ENV.to_h
 end
